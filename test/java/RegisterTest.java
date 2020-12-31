@@ -169,7 +169,8 @@ public class RegisterTest {
         PersonOverviewPage personOverviewPage = registerPage.submitValid();
         assertTrue(personOverviewPage.containsUserWithUserid(useridRandom));
 
-        registerPage = personOverviewPage.navigateToRegister();
+        HomePage homePage = personOverviewPage.logOut();
+        registerPage = homePage.navigateToRegister();
         assertEquals("Sign Up", registerPage.getTitle());
         registerPage.setUserid(useridRandom);
         registerPage.setFirstName("Jans");

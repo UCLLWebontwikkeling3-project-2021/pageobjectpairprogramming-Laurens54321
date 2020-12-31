@@ -59,8 +59,8 @@ public class Page {
         return messageDiv.findElement(By.cssSelector("p")).getText().equals(message);
     }
 
-    public HomePage navigateToHome(){
-        navHome.click();
+    public HomePage logOut(){
+        driver.get("localhost:8080/Servlet?command=LogOut");
         return PageFactory.initElements(driver, HomePage.class);
     }
 
